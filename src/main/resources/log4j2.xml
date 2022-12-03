@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <CustomLevels>
+        <CustomLevel name="CUSTOM" intLevel="550" />
+    </CustomLevels>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{%msg%n}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=grey, CUSTOM=green}"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="NameOfTheClassToLog" level="warn" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Logger name="NameOfAnotherClassToLog" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Logger name="NameOfAnotherClassToLog1" level="custom" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
